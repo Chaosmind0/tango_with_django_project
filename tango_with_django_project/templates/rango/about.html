@@ -7,6 +7,10 @@
 
 {% block body_block %}
     <h1>Rango says...</h1>
+    {% if visits %}
+        <p>Visits: {{ visits }}</p>
+    {% endif %}
+
     <div>
         here is the about page. <br />
         <strong>This tutorial has been put together by QIKAI ZHOU</strong><br />
