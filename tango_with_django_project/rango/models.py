@@ -36,4 +36,19 @@ class UserFile(models.Model):
     name = models.CharField(max_length=128, unique=True)
 
     def __str__(self):
+<<<<<<< HEAD
         return self.name
+=======
+        return self.name
+    
+class UserProfile(models.Model):
+    # This line is required. Links UserProfile to a User model instance.
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    
+    # The additional attributes we wish to include.
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
+    
+    def __str__(self):
+        return self.user.username
+>>>>>>> 3aad359ab85a6c495c7cda84e8e25252d0da2bbd
